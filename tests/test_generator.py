@@ -22,12 +22,12 @@ def test_palette_is_pillow_compatible():
 def test_find_content_box_ignores_black_side_bars():
     frame = np.zeros((40, 60, 3), dtype=np.uint8)
     frame[5:35, 8:52] = 255
-    assert find_content_box(frame) == (8, 52)
+    assert find_content_box(frame) == (8, 52, 5, 35)
 
 
-def test_find_content_box_falls_back_to_full_width_for_black_frame():
+def test_find_content_box_falls_back_to_full_frame_for_black_frame():
     frame = np.zeros((24, 48, 3), dtype=np.uint8)
-    assert find_content_box(frame) == (0, 48)
+    assert find_content_box(frame) == (0, 48, 0, 24)
 
 
 def test_wide_grid_center_crop_has_square_cell_geometry():
