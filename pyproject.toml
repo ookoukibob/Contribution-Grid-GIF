@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "contribution-grid-gif"
+version = "1.0.0"
+description = "Convert local videos into animated contribution-style pixel grid GIFs."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "OokoukiBob" }]
+dependencies = [
+  "numpy>=1.24",
+  "opencv-python-headless>=4.8",
+  "Pillow>=10.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+contribution-grid-gif = "contribution_grid_gif:main"
+
+[tool.setuptools]
+py-modules = ["contribution_grid_gif"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
