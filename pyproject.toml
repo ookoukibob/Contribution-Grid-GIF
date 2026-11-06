@@ -8,7 +8,8 @@ version = "1.0.0"
 description = "Convert local videos into animated contribution-style pixel grid GIFs."
 readme = "README.md"
 requires-python = ">=3.10"
-license = { file = "LICENSE" }
+license = "MIT"
+license-files = ["LICENSE"]
 authors = [{ name = "OokoukiBob" }]
 dependencies = [
   "numpy>=1.24",
