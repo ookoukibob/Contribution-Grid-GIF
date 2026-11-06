@@ -37,11 +37,11 @@ def test_wide_grid_center_crop_has_square_cell_geometry():
     assert crop[3] - crop[2] == 84
 
 
-def test_portrait_video_crops_horizontally_without_distortion():
+def test_portrait_video_crops_vertically_without_distortion():
     x0, x1, y0, y1 = center_crop_box(480, 852, 53, 7)
-    assert y0 == 0
-    assert y1 == 852
-    assert (x1 - x0) / (y1 - y0) == pytest.approx(53 / 7)
+    assert x0 == 0
+    assert x1 == 480
+    assert (x1 - x0) / (y1 - y0) == pytest.approx(53 / 7, rel=0.01)
 
 
 def test_gif_delays_preserve_average_fps():
